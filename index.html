@@ -1,14 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="Your brand description">
-  <title>Your Brand Name</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional landscaping services in Portsmouth, NH. Expert lawn care, garden design, hardscaping, and seasonal maintenance across the Seacoast region." />
+  <title>Landscaping Portsmouth NH | Expert Lawn & Garden Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --green-dark: #1a3a1f;
+      --green-mid: #2d5a35;
+      --green-light: #4a8f56;
+      --green-pale: #e8f4ea;
+      --gold: #b8860b;
+      --gold-light: #f5e6c0;
+      --cream: #faf8f3;
+      --text-dark: #1c1c1a;
+      --text-mid: #3d3d38;
+      --text-muted: #6b6b65;
+      --border: #d4cfc4;
+    }
+ 
+    body {
+      font-family: 'Source Serif 4', Georgia, serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.8;
+    }
+ 
+    /* ── HERO ── */
+    .hero {
+      background: var(--green-dark);
+      padding: 80px 40px 70px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 60px,
+        rgba(255,255,255,0.015) 60px,
+        rgba(255,255,255,0.015) 61px
+      );
+    }
+    .hero-eyebrow {
+      font-family: 'Source Serif 4', serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 span {
+      color: #9fd4a8;
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      max-width: 520px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    .hero-divider {
+      width: 50px;
+      height: 2px;
+      background: var(--gold);
+      margin: 30px auto 0;
+    }
+ 
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+ 
+    /* ── SECTIONS ── */
+    section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-child { border-bottom: none; }
+ 
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .section-rule {
+      width: 36px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 22px;
+    }
+ 
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--green-mid);
+      margin: 28px 0 8px;
+    }
+ 
+    p {
+      color: var(--text-mid);
+      font-size: 16.5px;
+      margin-bottom: 16px;
+    }
+ 
+    a {
+      color: var(--green-mid);
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--gold); }
+ 
+    /* ── SERVICES GRID ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--green-light);
+      border-radius: 4px;
+      padding: 22px 20px;
+    }
+    .service-card h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+    .service-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+ 
+    /* ── QUOTE BLOCK ── */
+    .quote-block {
+      background: var(--green-pale);
+      border-left: 4px solid var(--green-light);
+      padding: 24px 28px;
+      margin: 32px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .quote-block p {
+      font-style: italic;
+      font-size: 17px;
+      color: var(--green-dark);
+      margin: 0;
+    }
+ 
+    /* ── WHY LIST ── */
+    .why-list {
+      list-style: none;
+      margin-top: 20px;
+    }
+    .why-list li {
+      padding: 10px 0 10px 28px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-mid);
+      font-size: 16px;
+    }
+    .why-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 12px;
+      top: 13px;
+    }
+    .why-list li:last-child { border-bottom: none; }
+ 
+    /* ── SEASONAL TABLE ── */
+    .season-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    @media (min-width: 600px) {
+      .season-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .season-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 18px 14px;
+      text-align: center;
+    }
+    .season-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .season-card p {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+ 
+    /* ── CTA ── */
+    .cta-band {
+      background: var(--green-dark);
+      padding: 52px 40px;
+      text-align: center;
+    }
+    .cta-band h2 {
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .cta-band p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 28px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Source Serif 4', serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 14px 36px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+    .cta-btn:hover { background: #9a6f09; color: #fff; }
+ 
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 28px 40px;
+      text-align: center;
+    }
+    footer p {
+      color: rgba(255,255,255,0.4);
+      font-size: 13px;
+      margin: 0;
+    }
+ 
+    @media (max-width: 600px) {
+      .hero { padding: 52px 24px 44px; }
+      section { padding: 40px 0; }
+    }
+  </style>
 </head>
 <body>
-  <h1>Craig Smith CWS</h1>
-  <p>25+ Years of Experience Providing Fine Gardening & Landscaping Throughout The Seacoast & Southern Maine.</p>
-  <p>Visit: <a href="https://www.seacoastgardener.com/">Seacoast Gardener</a></p>
+ 
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Seacoast New Hampshire</p>
+  <h1>Expert <span>Landscaping</span> in Portsmouth, NH</h1>
+  <p class="hero-sub">Transforming outdoor spaces across the Seacoast with artisan craftsmanship and deep local knowledge.</p>
+  <div class="hero-divider"></div>
+</div>
+ 
+<div class="container">
+ 
+  <!-- INTRO -->
+  <section>
+    <h2>Professional Landscaping Services in Portsmouth, NH</h2>
+    <div class="section-rule"></div>
+    <p>Portsmouth, New Hampshire is a city that takes tremendous pride in its historic architecture, its walkable neighborhoods, and its stunning natural backdrop along the Piscataqua River. From the cobblestone streets of the South End to the sweeping coastal views of New Castle, the outdoor spaces here are as much a part of the city's identity as the colonial buildings themselves. That's why choosing the right landscaping partner in Portsmouth, NH matters — not just for curb appeal, but for the health of your property and the character of your community.</p>
+    <p>Whether you're searching for routine lawn maintenance, a complete garden redesign, or professional hardscaping work, the Seacoast region has a growing community of dedicated landscape professionals. One standout resource for homeowners and garden enthusiasts in this area is <a href="#" title="Seacoast Gardener">Seacoast Gardener</a>, which has become a trusted guide for all things related to planting, soil health, and sustainable garden practices along the New Hampshire coast. From seed selection to seasonal pruning schedules, having access to informed local guidance makes every landscaping project more successful.</p>
+    <p>This guide covers everything you need to know about landscaping in Portsmouth, NH — from selecting the right services for your property, to understanding how New England's climate shapes your gardening calendar, to finding professionals who genuinely understand Seacoast conditions.</p>
+ 
+    <div class="quote-block">
+      <p>"A well-maintained landscape isn't just beautiful — it increases property value, improves stormwater management, and brings a sense of calm to daily life. Portsmouth homeowners who invest in professional landscaping consistently see a return in both livability and market value."</p>
+    </div>
+  </section>
+ 
+  <!-- SERVICES -->
+  <section>
+    <h2>Core Landscaping Services Available in Portsmouth</h2>
+    <div class="section-rule"></div>
+    <p>The best landscaping companies serving Portsmouth, NH offer a wide spectrum of services tailored to the unique needs of Seacoast properties. New England's climate — with its cold winters, wet springs, humid summers, and dramatic fall foliage — demands a versatile and knowledgeable approach. Here is a breakdown of the most commonly sought landscaping services in the area:</p>
+ 
+    <div class="services-grid">
+      <div class="service-card">
+        <h4>Lawn Care & Maintenance</h4>
+        <p>Weekly or bi-weekly mowing, edging, fertilization programs, aeration, overseeding, and seasonal cleanups to keep turf lush year-round.</p>
+      </div>
+      <div class="service-card">
+        <h4>Garden Design & Installation</h4>
+        <p>Custom planting plans using native Seacoast species, perennial beds, mixed borders, cottage gardens, and pollinator-friendly layouts.</p>
+      </div>
+      <div class="service-card">
+        <h4>Hardscaping & Patios</h4>
+        <p>Paver patios, natural stone walkways, retaining walls, fire pit areas, and outdoor kitchen installations built to handle New England winters.</p>
+      </div>
+      <div class="service-card">
+        <h4>Tree & Shrub Care</h4>
+        <p>Proper pruning, shaping, deadwooding, pest management, and planting of ornamental trees suited to the maritime climate of Portsmouth.</p>
+      </div>
+      <div class="service-card">
+        <h4>Irrigation Systems</h4>
+        <p>Design, installation, and seasonal winterization of smart irrigation systems that conserve water while keeping plants properly hydrated.</p>
+      </div>
+      <div class="service-card">
+        <h4>Seasonal Cleanups</h4>
+        <p>Spring debris removal, fall leaf collection, mulching, bed preparation, and winter protection for tender plants and garden structures.</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- NATIVE PLANTS -->
+  <section>
+    <h2>Planting for the Portsmouth Climate</h2>
+    <div class="section-rule"></div>
+    <p>Portsmouth sits in USDA Hardiness Zone 6a to 6b, meaning winters can see temperatures dip as low as -10°F in colder years. The coastal influence of the Atlantic, however, moderates temperatures and extends the growing season slightly compared to inland New Hampshire. This creates a distinctive gardening environment that rewards those who choose the right plants.</p>
+ 
+    <h3>Native plants that thrive in Seacoast NH</h3>
+    <p>Native plants are almost always the best choice for Portsmouth landscapes. They've evolved alongside local soils, rainfall patterns, and wildlife for thousands of years, which means they require less fertilizer, less irrigation, and fewer pest interventions once established. Some outstanding choices include:</p>
+    <ul class="why-list">
+      <li><strong>Inkberry Holly (Ilex glabra)</strong> — An evergreen native shrub that tolerates wet, acidic soils common near the coast and provides winter berries for birds.</li>
+      <li><strong>Virginia Rose (Rosa virginiana)</strong> — Salt-tolerant and deer-resistant, this native rose blooms pink in summer and produces bright red hips through winter.</li>
+      <li><strong>Wild Columbine (Aquilegia canadensis)</strong> — A graceful perennial for shady spots, beloved by hummingbirds and native bees in spring.</li>
+      <li><strong>Switchgrass (Panicum virgatum)</strong> — An ornamental native grass that adds movement and texture to dry, sandy sites and turns gold in autumn.</li>
+      <li><strong>Bayberry (Morella pensylvanica)</strong> — A coastal-tough shrub with waxy aromatic berries that attract migrating warblers each fall along the Seacoast.</li>
+      <li><strong>New England Aster (Symphyotrichum novae-angliae)</strong> — One of the last flowers of the season, this vivid purple aster keeps pollinators fed well into October.</li>
+    </ul>
+ 
+    <p>Working with local nurseries and landscape designers who specialize in native plantings ensures your garden contributes to the broader ecosystem health of the Piscataqua watershed and the Great Bay estuary — both ecologically significant areas that depend on healthy surrounding land management.</p>
+  </section>
+ 
+  <!-- SEASONAL -->
+  <section>
+    <h2>A Seasonal Landscaping Calendar for Portsmouth, NH</h2>
+    <div class="section-rule"></div>
+    <p>Successful landscaping in Portsmouth requires working with the rhythm of New England's four distinct seasons. Here's a quick-reference guide to what needs attention throughout the year:</p>
+ 
+    <div class="season-grid">
+      <div class="season-card">
+        <p class="season-label">Spring</p>
+        <p>Cleanup debris, aerate lawns, apply pre-emergent weed control, divide perennials, prune spring-flowering shrubs after bloom, mulch beds.</p>
+      </div>
+      <div class="season-card">
+        <p class="season-label">Summer</p>
+        <p>Regular mowing, deep watering during dry spells, deadhead perennials, monitor for pests, plant annuals, manage irrigation schedules.</p>
+      </div>
+      <div class="season-card">
+        <p class="season-label">Autumn</p>
+        <p>Plant spring bulbs, overseed thin lawn areas, collect leaves, cut back perennials, winterize irrigation, protect tender plants.</p>
+      </div>
+      <div class="season-card">
+        <p class="season-label">Winter</p>
+        <p>Plan next season's projects, order seeds and materials, prune dormant trees, apply anti-desiccant sprays to broadleaf evergreens.</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- WHY HIRE PRO -->
+  <section>
+    <h2>Why Hire a Professional Landscaper in Portsmouth?</h2>
+    <div class="section-rule"></div>
+    <p>Some Portsmouth homeowners wonder whether professional landscaping is worth the investment, especially when DIY options are accessible. The reality is that professional landscapers deliver results that go far beyond what most homeowners can achieve on their own — and often at a lower long-term cost when you factor in plant failures, equipment expenses, and the time investment of ongoing maintenance.</p>
+    <p>Here are the clearest advantages of hiring a qualified landscaping professional in the Portsmouth area:</p>
+    <ul class="why-list">
+      <li>Deep knowledge of local soil types, drainage conditions, and microclimates specific to Seacoast NH properties.</li>
+      <li>Access to commercial-grade equipment that produces cleaner, faster, and more precise results than consumer-grade tools.</li>
+      <li>Trained eye for early signs of pest infestations, lawn diseases, and plant stress before problems escalate.</li>
+      <li>Proper plant selection to avoid species that perform poorly in maritime conditions or become invasive.</li>
+      <li>Consistency — a professional crew maintains your property on a dependable schedule even when your own schedule gets busy.</li>
+      <li>Design expertise to create cohesive, balanced outdoor spaces rather than a piecemeal collection of plants and features.</li>
+      <li>Compliance with Portsmouth's local ordinances regarding stormwater management, tree removal permits, and shoreland protection rules.</li>
+    </ul>
+ 
+    <h3>Questions to ask before hiring a landscaper</h3>
+    <p>When interviewing landscaping companies serving Portsmouth, NH, it's wise to ask about their experience with properties similar to yours, whether they carry liability insurance and workers' compensation, how they handle invasive plant removal, and what their approach to sustainable practices looks like. A good landscaper will welcome these questions and answer them clearly and confidently.</p>
+  </section>
+ 
+  <!-- HARDSCAPING -->
+  <section>
+    <h2>Hardscaping in Portsmouth: Patios, Walls & Walkways</h2>
+    <div class="section-rule"></div>
+    <p>One of the most transformative investments a Portsmouth homeowner can make is a well-designed hardscape. Whether it's a bluestone patio that extends your living space outdoors, a granite retaining wall that solves a challenging grade change, or a permeable paver driveway that manages runoff elegantly — hardscaping adds lasting value and function to any property.</p>
+    <p>Portsmouth's freeze-thaw cycle is one of the most demanding in New England. Temperatures regularly cross the freezing threshold dozens of times each winter, which means poorly installed hardscaping can heave, crack, and deteriorate within just a few seasons. A professional landscaping contractor who understands proper base preparation — typically 6 to 12 inches of compacted gravel beneath any paver or stone installation — is essential for any hardscape project in the Seacoast region.</p>
+    <p>Popular hardscaping materials for Portsmouth properties include natural New Hampshire granite (both tumbled and cut), locally sourced fieldstone for walls, and various concrete paver systems that replicate the look of traditional cobblestone in keeping with the city's historic aesthetic. Whatever material you choose, proper drainage planning is always the most important technical detail — ensuring water moves away from your home's foundation and doesn't pool on surfaces during Portsmouth's frequent rain events.</p>
+  </section>
+ 
+  <!-- SUSTAINABILITY -->
+  <section>
+    <h2>Sustainable Landscaping Practices on the Seacoast</h2>
+    <div class="section-rule"></div>
+    <p>Portsmouth is a community that takes environmental stewardship seriously, and its landscaping culture reflects that. Many homeowners and landscape professionals here are actively moving away from chemical-heavy lawn care programs toward approaches that work with nature rather than against it. This shift is especially important given Portsmouth's proximity to the Great Bay estuary, one of the most ecologically sensitive tidal systems in New England, where lawn runoff has measurable impacts on water quality.</p>
+    <p>Sustainable landscaping practices gaining traction in Portsmouth include composting and on-site soil building to reduce the need for imported fertilizers, rain garden installations that capture and filter stormwater on residential properties, lawn reduction in favor of low-maintenance native ground covers, and integrated pest management strategies that minimize pesticide use. Many landscape companies now offer organic lawn care programs that build long-term soil health without synthetic inputs — often yielding lawns that are more drought-resistant and resilient over time than conventionally treated turf.</p>
+    <p>If sustainability is a priority for your property, look for landscaping professionals who hold certifications in organic land care, native plant horticulture, or stormwater management. These credentials signal a genuine commitment to environmentally responsible practice rather than simply marketing language.</p>
+  </section>
+ 
+</div>
+ 
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Ready to Transform Your Portsmouth Property?</h2>
+    <p>Connect with experienced local landscaping professionals who understand Seacoast conditions and share your vision for an exceptional outdoor space.</p>
+    <a href="#" class="cta-btn">Get a Free Estimate</a>
+  </div>
+</div>
+ 
+<footer>
+  <p>Landscaping Portsmouth NH &mdash; Serving the Seacoast Region of New Hampshire</p>
+</footer>
+ 
 </body>
-</html>
